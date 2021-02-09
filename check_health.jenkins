@@ -1,1 +1,20 @@
-curl https://api.mcsrvstat.us/2/zhogin.pro:26666
+#!groovy
+//Save world to disk
+properties([disableConcurrentBuilds()])
+
+pipeline {
+    agent { 
+        label 'master'
+        }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+        timestamps()
+    }
+    stages {
+        stage("Save data") {
+            steps {
+                sh 'curl https://api.mcsrvstat.us/2/zhogin.pro:26666'
+            }
+        }
+    }
+}
