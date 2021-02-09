@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage("Save data") {
             steps {
-                sh 'ssh minecraft@192.168.1.9 "screen -r minecraft -X stuff 'save-all^m"'
+                sh 'ssh minecraft@192.168.1.9 "screen -r minecraft -X stuff save-all^m"'
             }
         }
     }
