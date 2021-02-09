@@ -1,5 +1,5 @@
 #!groovy
-// Save data server
+//Save world to disk
 properties([disableConcurrentBuilds()])
 
 pipeline {
@@ -10,7 +10,8 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
     }
-        stage("Save data on server") {
+    stages {
+        stage("Save data") {
             steps {
                 sh 'ssh minecraft@192.168.1.9 \'screen -r minecraft -X stuff 'save-all^m'\''
             }
