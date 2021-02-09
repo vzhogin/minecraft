@@ -1,0 +1,3 @@
+import groovy.json.JsonSlurper
+URL apiUrl = "https://api.mcsrvstat.us/2/zhogin.pro:26666".toURL()
+List json = new JsonSlurper().parse(apiUrl.newReader())
