@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage("Save data") {
             steps {
-                sh 'curl https://api.mcsrvstat.us/2/zhogin.pro:26666'
+                sh 'curl https://api.mcsrvstat.us/2/zhogin.pro:266661'
             }
         }
     }
