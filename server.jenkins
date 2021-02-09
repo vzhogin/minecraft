@@ -13,13 +13,13 @@ pipeline {
     stages {
         stage("Check name") {
             steps {
-                sh 'ssh jenkins@192.168.1.9 \'hostname\''
-                sh 'ssh jenkins@192.168.1.9 \'uptime\''
+                sh 'ssh minecraft@192.168.1.9 \'hostname\''
+                sh 'ssh minecraft@192.168.1.9 \'uptime\''
             }
         }
         stage("Start server") {
             steps {
-                sh 'ssh jenkins@192.168.1.9 \'cd /var/minecraft;java -Xms1G -Xmx2G -XX:+UseConcMarkSweepGC -jar paper-1.16.4-414.jar\''
+                sh 'ssh minecraft@192.168.1.9 \'cd /var/minecraft;java -Xms1G -Xmx2G -XX:+UseConcMarkSweepGC -jar paper-1.16.4-414.jar\''
             }
         }
     }
