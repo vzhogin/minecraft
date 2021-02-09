@@ -19,7 +19,7 @@ pipeline {
         }
         stage("Start server") {
             steps {
-                sh 'ssh minecraft@192.168.1.9 \'cd /var/minecraft;script /dev/null;screen java -Xms1G -Xmx2G -XX:+UseConcMarkSweepGC -jar server.jar\''
+                sh 'ssh minecraft@192.168.1.9 \'cd /var/minecraft;screen -d -m java -Xms1G -Xmx2G -XX:+UseConcMarkSweepGC -jar server.jar\''
             }
         }
     }
