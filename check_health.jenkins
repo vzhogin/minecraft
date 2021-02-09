@@ -1,1 +1,1 @@
-curl -H https://api.mcsrvstat.us/2/zhogin.pro:26666
+curl https://api.mcsrvstat.us/2/zhogin.pro:26666
