@@ -1,5 +1,5 @@
 #!groovy
-//Save world to disk
+//Get json
 properties([disableConcurrentBuilds()])
 
 pipeline {
@@ -11,7 +11,7 @@ pipeline {
         timestamps()
     }
     stages {
-        stage("Save data") {
+        stage("Get json") {
             steps {
                 sh 'curl https://api.mcsrvstat.us/2/zhogin.pro:26666'
             }
